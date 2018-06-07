@@ -14,7 +14,7 @@ import:
   version: kubernetes-1.10.2
 - package: github.com/openshift/api
   repo: https://github.com/adambkaplan/api.git
-  version: feature/build-source-configs
+  version: feature/configmap-rebased
 - package: github.com/golang/glog
 - package: github.com/spf13/pflag
 # for gengo

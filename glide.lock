@@ -1,5 +1,5 @@
-hash: 565631ee4d0c8a22b2621c1da45437f4f07c3ddc2ea656a6f368cea7104c6802
-updated: 2018-05-14T13:12:27.297044-04:00
+hash: 37469e720c5ef3030758ca5a107e72f5deb52a47c05cb41b2222af1076d69068
+updated: 2018-06-07T16:17:26.039104-04:00
 imports:
 - name: github.com/davecgh/go-spew
   version: 782f4967f2dc4564575ca782fe2d04090b5faca8
@@ -41,7 +41,7 @@ imports:
 - name: github.com/json-iterator/go
   version: 13f86432b882000a51c6e610c620974462691a97
 - name: github.com/openshift/api
-  version: fe60953d55745f187394d838f6901a0f685b6c4f
+  version: 2ab2971c918050dfcc8f43757974b679b17c6639
   repo: https://github.com/adambkaplan/api.git
   subpackages:
   - apps/v1
