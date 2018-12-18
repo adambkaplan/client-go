@@ -32,17 +32,15 @@ type BuildSpec struct {
 }
 
 type BuildDefaults struct {
-	// GitHTTPProxy is the location of the HTTPProxy for Git source
+	// BuildProxy contains the proxy settings for all build operations, including image pull/push
+	// and source download.
 	// +optional
-	GitHTTPProxy string `json:"gitHTTPProxy,omitempty"`
+	BuildProxy Proxy `json:"registryProxy,omitempty"`
 
-	// GitHTTPSProxy is the location of the HTTPSProxy for Git source
+	// GitProxy contains the proxy settings for source download operations only. If set, this will override
+	// any BuildProxy settings for source download.
 	// +optional
-	GitHTTPSProxy string `json:"gitHTTPSProxy,omitempty"`
-
-	// GitNoProxy is the list of domains for which the proxy should not be used
-	// +optional
-	GitNoProxy string `json:"gitNoProxy,omitempty"`
+	GitProxy Proxy `json:"gitProxy,omitempty"`
 
 	// Env is a set of default environment variables that will be applied to the
 	// build if the specified variables do not exist on the build
@@ -67,6 +65,18 @@ type ImageLabel struct {
 	// Value defines the literal value of the label.
 	// +optional
 	Value string `json:"value,omitempty"`
+}
+
+type Proxy struct {
+	// HTTP is the URL of this proxy for HTTP traffic
+	// +optional
+	HTTP string `json:"http,omitempty"`
+	// HTTPSProxy is the URL of this proxy for HTTPS traffic
+	// +optional
+	HTTPS string `json:"https,omitempty"`
+	// NoProxy is the list of the domains for which this proxy should not be used
+	// +optional
+	NoProxy string `json:"noProxy,omitempty"`
 }
 
 type BuildOverrides struct {
